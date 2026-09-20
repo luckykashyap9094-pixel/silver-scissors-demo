@@ -40,42 +40,26 @@
       position: relative;
     }
 
-    /* =========================================================
-       ASLI BACKGROUND IMAGE WALA SECTION
-       ========================================================= */
+    /* Asli Background Image Wala Section */
     .bg-main-image {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1600&auto=format&fit=crop&q=80');
-      background-size: cover;
-      background-position: center;
-      z-index: -2; /* Sabse peeche */
+      background-size: cover; background-position: center; z-index: -2;
     }
     .bg-dark-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(8, 8, 12, 0.85); /* Text clear padhne ke liye dark glass */
-      backdrop-filter: blur(8px);
-      z-index: -1;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(8, 8, 12, 0.85); backdrop-filter: blur(8px); z-index: -1;
     }
 
     /* Preloader */
     #preloader {
-      position: fixed; inset: 0;
-      background: #000;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      z-index: 99999;
+      position: fixed; inset: 0; background: #000;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 99999;
     }
-    .loader-title {
-      font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;
-    }
+    .loader-title { font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
     .loader-title span { color: var(--accent-gold); }
-    .loader-bar-wrap {
-      width: 150px; height: 2px; background: rgba(255,255,255,0.1); overflow: hidden;
-    }
-    .loader-bar {
-      width: 0%; height: 100%; background: linear-gradient(90deg, #d4af37, #a8a29e);
-    }
+    .loader-bar-wrap { width: 150px; height: 2px; background: rgba(255,255,255,0.1); overflow: hidden; }
+    .loader-bar { width: 0%; height: 100%; background: linear-gradient(90deg, #d4af37, #a8a29e); }
 
     /* Navbar */
     .navbar {
@@ -83,10 +67,7 @@
       padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;
       position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border-subtle);
     }
-    .logo {
-      font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none;
-      display: flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif;
-    }
+    .logo { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif; }
     .logo i { color: var(--accent-gold); }
     .nav-btn {
       background: var(--text-main); color: #000; padding: 8px 18px; border-radius: 50px;
@@ -97,23 +78,16 @@
     /* Hero Section */
     .hero-reel {
       position: relative; width: 100%; min-height: 82vh;
-      display: flex; align-items: center; justify-content: center; overflow: hidden;
-      padding: 70px 20px;
-      z-index: 1;
+      display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 70px 20px; z-index: 1;
     }
-    .reel-content {
-      position: relative; z-index: 2; text-align: center; max-width: 740px;
-    }
-
+    .reel-content { position: relative; z-index: 2; text-align: center; max-width: 740px; }
     .rating-badge {
       display: inline-flex; align-items: center; gap: 6px; background: rgba(212, 175, 55, 0.2);
-      color: var(--accent-gold); padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid rgba(212,175,55,0.5);
-      backdrop-filter: blur(8px);
+      color: var(--accent-gold); padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid rgba(212,175,55,0.5); backdrop-filter: blur(8px);
     }
     .hero-reel h1 { font-size: clamp(2.3rem, 5.5vw, 3.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; font-family: 'Space Grotesk', sans-serif; }
     .hero-reel h1 span { color: var(--accent-gold); }
     .hero-reel p { font-size: 1.05rem; color: #fff; margin-bottom: 30px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
-    
     .btn-book {
       background: var(--accent-green); color: #000; padding: 15px 34px; border-radius: 50px;
       font-size: 1.05rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
@@ -121,90 +95,58 @@
     }
     .btn-book:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6); }
 
-    /* Info Bar (Glassmorphic) */
-    .info-bar {
-      position: relative; z-index: 1;
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 22px 20px;
-      background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(14px);
-      border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);
-    }
-    .info-item { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 0.88rem; font-weight: 500;}
-    .info-item i { color: var(--accent-gold); font-size: 1.1rem; }
-
-    /* Services Section */
-    .services-sec { position: relative; z-index: 1; padding: 75px 20px; max-width: 1100px; margin: 0 auto; }
+    /* General Section Styles */
+    .sec-container { position: relative; z-index: 1; padding: 75px 20px; max-width: 1100px; margin: 0 auto; }
     .sec-header { text-align: center; margin-bottom: 45px; }
     .sec-header h2 { font-size: 2.3rem; font-weight: 800; font-family: 'Space Grotesk', sans-serif; }
     .sec-header span { color: var(--accent-gold); }
+    .sec-header p { color: var(--text-muted); margin-top: 8px; }
 
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-    .service-card {
-      background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 20px;
-      overflow: hidden; transition: 0.35s ease; backdrop-filter: blur(16px);
-    }
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--border-glow);
-      background: var(--bg-card-hover);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-    }
-    .service-img-box {
-      width: 100%; height: 190px; overflow: hidden; position: relative;
-    }
-    .service-img-box img {
-      width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
-    }
-    .service-card:hover .service-img-box img { transform: scale(1.08); }
-    .service-body { padding: 22px; text-align: left; }
-    .service-body h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
-    .service-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
-
-    /* Gallery Section */
-    .gallery-sec {
-      position: relative; z-index: 1; padding: 65px 20px;
-      background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(14px);
-      border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);
-    }
-    .gallery-grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;
-    }
-    .gallery-item {
-      position: relative; border-radius: 16px; overflow: hidden; height: 260px;
-      border: 1px solid var(--border-subtle);
-    }
-    .gallery-item img {
-      width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
-    }
-    .gallery-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
-      display: flex; align-items: flex-end; padding: 16px;
-      opacity: 0; transition: opacity 0.3s ease;
-    }
-    .gallery-item:hover img { transform: scale(1.1); }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-overlay span {
-      font-size: 0.9rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 1px;
-    }
-
-    /* Reviews Section */
-    .reviews-sec { position: relative; z-index: 1; padding: 75px 20px; }
-    .review-wrap { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-    .review-box {
+    /* Menu & Pricing Section */
+    .menu-box {
       background: var(--bg-card); backdrop-filter: blur(16px);
-      padding: 26px; border-radius: 16px; border-left: 4px solid var(--accent-gold);
-      border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-gold);
+      border: 1px solid var(--border-subtle); border-radius: 20px; padding: 30px; max-width: 800px; margin: 0 auto;
     }
-    .stars { color: var(--accent-gold); margin-bottom: 10px; font-size: 0.9rem; }
-    .review-text { font-size: 0.98rem; font-style: italic; color: #fff; margin-bottom: 12px; }
-    .reviewer { font-weight: 700; font-size: 0.85rem; color: var(--accent-gold); }
+    .menu-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 0; border-bottom: 1px dashed var(--border-subtle);
+    }
+    .menu-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .menu-info h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .menu-info p { font-size: 0.85rem; color: var(--text-muted); }
+    .menu-price { font-size: 1.3rem; font-weight: 800; color: var(--accent-gold); }
+
+    /* Live Video Section */
+    .video-wrapper {
+      background: var(--bg-card); backdrop-filter: blur(16px);
+      padding: 20px; border-radius: 20px; border: 1px solid var(--border-subtle);
+      max-width: 900px; margin: 0 auto;
+    }
+    .video-container {
+      position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0; overflow: hidden; border-radius: 12px;
+    }
+    .video-container video, .video-container iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+
+    /* Policy & Terms Section */
+    .policy-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+    }
+    .policy-card {
+      background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px);
+      padding: 25px; border-radius: 16px; border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent-gold); display: flex; align-items: flex-start; gap: 15px;
+    }
+    .policy-card i { font-size: 1.5rem; color: var(--accent-gold); margin-top: 4px; }
+    .policy-content h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
+    .policy-content p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
 
     /* Footer */
     footer {
-      position: relative; z-index: 1;
-      text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85rem;
-      border-top: 1px solid var(--border-subtle); background: rgba(0,0,0,0.7);
+      position: relative; z-index: 1; text-align: center; padding: 40px 20px; color: var(--text-muted);
+      font-size: 0.85rem; border-top: 1px solid var(--border-subtle); background: rgba(0,0,0,0.8);
     }
     footer span { color: #fff; font-weight: 600; }
   </style>
@@ -244,94 +186,100 @@
     </div>
   </header>
 
-  <!-- Info Bar -->
-  <div class="info-bar">
-    <div class="info-item"><i class="fa-solid fa-location-dot"></i> Harimandir, Megha Tower, Hirapur</div>
-    <div class="info-item"><i class="fa-solid fa-clock"></i> Open Daily: 8:00 AM – 9:00 PM</div>
-    <div class="info-item"><i class="fa-solid fa-phone"></i> 082352 51729</div>
-  </div>
-
-  <!-- Services Grid -->
-  <section class="services-sec">
+  <!-- Menu & Pricing Section (NEW) -->
+  <section class="sec-container">
     <div class="sec-header" data-aos="fade-up">
-      <h2>Crafted <span>Services</span></h2>
-      <p style="color: var(--text-muted); margin-top: 8px;">Tailored haircuts and grooming treatments.</p>
+      <h2>Service <span>Menu</span></h2>
+      <p>Premium grooming services at reasonable prices in Hirapur.</p>
     </div>
     
-    <div class="service-grid">
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-img-box">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&auto=format&fit=crop&q=80" alt="Signature Haircut">
+    <div class="menu-box" data-aos="fade-up" data-aos-delay="100">
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Classic Haircut</h3>
+          <p>Scissor cut, fade, and professional styling</p>
         </div>
-        <div class="service-body">
-          <h3>Signature Haircuts</h3>
-          <p>Sharp fades, textured crops, and executive styling customised to your preference.</p>
-        </div>
+        <div class="menu-price">₹150</div>
       </div>
-
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-img-box">
-          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&auto=format&fit=crop&q=80" alt="Beard Grooming">
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Skin Fade & Trendy Cut</h3>
+          <p>Zero fade, textured crop, and advanced styling</p>
         </div>
-        <div class="service-body">
-          <h3>Beard Styling & Shave</h3>
-          <p>Hot towel treatment, razor-sharp outlines, and beard conditioning oils.</p>
-        </div>
+        <div class="menu-price">₹200</div>
       </div>
-
-      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-img-box">
-          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&auto=format&fit=crop&q=80" alt="Hair Spa">
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Beard Styling & Trim</h3>
+          <p>Sharp outlines, trim, and beard oil conditioning</p>
         </div>
-        <div class="service-body">
-          <h3>Hair Spa & Highlights</h3>
-          <p>Deep dandruff treatment, hair nourishment spa, and trendy styling colors.</p>
+        <div class="menu-price">₹100</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Hair Spa & Dandruff Treatment</h3>
+          <p>Deep scalp cleansing and nourishing spa</p>
         </div>
+        <div class="menu-price">₹350</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-info">
+          <h3>Hair Color (Global / Highlights)</h3>
+          <p>Trendy colors, grey coverage, and highlighting</p>
+        </div>
+        <div class="menu-price">₹400+</div>
       </div>
     </div>
   </section>
 
-  <!-- Photo Gallery Showcase -->
-  <section class="gallery-sec">
+  <!-- Live Video Tour Section (NEW) -->
+  <section class="sec-container" style="background: rgba(0,0,0,0.4); border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
     <div class="sec-header" data-aos="fade-up">
-      <h2>Recent <span>Transformations</span></h2>
-      <p style="color: var(--text-muted); margin-top: 8px;">Check out the latest cuts fresh out of the chair</p>
+      <h2>Live Salon <span>Tour</span></h2>
+      <p>Experience the vibe before you visit our chair.</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=500&auto=format&fit=crop&q=80" alt="Fade Cut">
-        <div class="gallery-overlay"><span>Skin Fade & Crop</span></div>
-      </div>
-      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&auto=format&fit=crop&q=80" alt="Beard Trim">
-        <div class="gallery-overlay"><span>Beard Sculpting</span></div>
-      </div>
-      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&auto=format&fit=crop&q=80" alt="Salon Chair Vibe">
-        <div class="gallery-overlay"><span>Executive Care</span></div>
-      </div>
-      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=500&auto=format&fit=crop&q=80" alt="Modern Haircut">
-        <div class="gallery-overlay"><span>Classic Pompadour</span></div>
+    
+    <div class="video-wrapper" data-aos="zoom-in" data-aos-delay="100">
+      <div class="video-container">
+        <!-- Pexels/Mixkit Sample Barber Video for Demo -->
+        <video controls autoplay muted loop playsinline>
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-barber-cutting-hair-with-scissors-42857-large.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
       </div>
     </div>
   </section>
 
-  <!-- Real Google Testimonials -->
-  <section class="reviews-sec">
+  <!-- Policies & Terms Section (NEW) -->
+  <section class="sec-container">
     <div class="sec-header" data-aos="fade-up">
-      <h2>What Hirapur <span>Says</span></h2>
+      <h2>Booking <span>Policies</span></h2>
+      <p>Please review our terms to ensure a smooth experience.</p>
     </div>
-    <div class="review-wrap">
-      <div class="review-box" data-aos="fade-right">
-        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p class="review-text">"Best Haircuts in Town at Cheaper rates. Nice place for clean and fancy look."</p>
-        <p class="reviewer">— Subhash Kumar Singh (Local Guide)</p>
+
+    <div class="policy-grid">
+      <div class="policy-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <div class="policy-content">
+          <h4>15-Minute Grace Period</h4>
+          <p>If you arrive more than 15 minutes late for your booked slot, your appointment may be given to waiting walk-in clients.</p>
+        </div>
       </div>
-      <div class="review-box" data-aos="fade-left">
-        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p class="review-text">"Saloon acha hai price v sahi hai, aur hair cutting v acha krte hai... One of the best Saloons in Dhanbad near Hari Mandir."</p>
-        <p class="reviewer">— Sadab Khan & Amit Chandravansi</p>
+      
+      <div class="policy-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-calendar-xmark"></i>
+        <div class="policy-content">
+          <h4>Cancellation Policy</h4>
+          <p>We request you to cancel or reschedule at least 1 hour before your appointment by replying on WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="policy-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <div class="policy-content">
+          <h4>Payments Accepted</h4>
+          <p>We accept Cash and all major UPI payments (Google Pay, PhonePe, Paytm, FamPay). No advance required for booking.</p>
+        </div>
       </div>
     </div>
   </section>
