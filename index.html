@@ -28,19 +28,10 @@
       --border-glow: rgba(212, 175, 55, 0.45);
     }
 
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+    body { color: var(--text-main); overflow-x: hidden; position: relative; }
 
-    body {
-      color: var(--text-main);
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Asli Background Image Wala Section */
+    /* Background Theme */
     .bg-main-image {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1600&auto=format&fit=crop&q=80');
@@ -52,10 +43,7 @@
     }
 
     /* Preloader */
-    #preloader {
-      position: fixed; inset: 0; background: #000;
-      display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 99999;
-    }
+    #preloader { position: fixed; inset: 0; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 99999; }
     .loader-title { font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
     .loader-title span { color: var(--accent-gold); }
     .loader-bar-wrap { width: 150px; height: 2px; background: rgba(255,255,255,0.1); overflow: hidden; }
@@ -69,85 +57,49 @@
     }
     .logo { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif; }
     .logo i { color: var(--accent-gold); }
-    .nav-btn {
-      background: var(--text-main); color: #000; padding: 8px 18px; border-radius: 50px;
-      font-weight: 700; text-decoration: none; font-size: 0.85rem; transition: 0.3s;
-    }
+    .nav-btn { background: var(--text-main); color: #000; padding: 8px 18px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 0.85rem; transition: 0.3s; }
     .nav-btn:hover { background: var(--accent-gold); color: #000; }
 
     /* Hero Section */
-    .hero-reel {
-      position: relative; width: 100%; min-height: 82vh;
-      display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 70px 20px; z-index: 1;
-    }
+    .hero-reel { position: relative; width: 100%; min-height: 82vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 70px 20px; z-index: 1; }
     .reel-content { position: relative; z-index: 2; text-align: center; max-width: 740px; }
-    .rating-badge {
-      display: inline-flex; align-items: center; gap: 6px; background: rgba(212, 175, 55, 0.2);
-      color: var(--accent-gold); padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid rgba(212,175,55,0.5); backdrop-filter: blur(8px);
-    }
+    .rating-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(212, 175, 55, 0.2); color: var(--accent-gold); padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid rgba(212,175,55,0.5); backdrop-filter: blur(8px); }
     .hero-reel h1 { font-size: clamp(2.3rem, 5.5vw, 3.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; font-family: 'Space Grotesk', sans-serif; }
     .hero-reel h1 span { color: var(--accent-gold); }
     .hero-reel p { font-size: 1.05rem; color: #fff; margin-bottom: 30px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
-    .btn-book {
-      background: var(--accent-green); color: #000; padding: 15px 34px; border-radius: 50px;
-      font-size: 1.05rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
-      transition: 0.3s; box-shadow: 0 4px 25px rgba(37, 211, 102, 0.35);
-    }
+    .btn-book { background: var(--accent-green); color: #000; padding: 15px 34px; border-radius: 50px; font-size: 1.05rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 25px rgba(37, 211, 102, 0.35); }
     .btn-book:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6); }
 
-    /* General Section Styles */
+    /* Sections Shared */
     .sec-container { position: relative; z-index: 1; padding: 75px 20px; max-width: 1100px; margin: 0 auto; }
     .sec-header { text-align: center; margin-bottom: 45px; }
     .sec-header h2 { font-size: 2.3rem; font-weight: 800; font-family: 'Space Grotesk', sans-serif; }
     .sec-header span { color: var(--accent-gold); }
     .sec-header p { color: var(--text-muted); margin-top: 8px; }
 
-    /* Menu & Pricing Section */
-    .menu-box {
-      background: var(--bg-card); backdrop-filter: blur(16px);
-      border: 1px solid var(--border-subtle); border-radius: 20px; padding: 30px; max-width: 800px; margin: 0 auto;
-    }
-    .menu-item {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 0; border-bottom: 1px dashed var(--border-subtle);
-    }
+    /* Menu & Pricing */
+    .menu-box { background: var(--bg-card); backdrop-filter: blur(16px); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 30px; max-width: 800px; margin: 0 auto; }
+    .menu-item { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px dashed var(--border-subtle); }
     .menu-item:last-child { border-bottom: none; padding-bottom: 0; }
     .menu-info h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
     .menu-info p { font-size: 0.85rem; color: var(--text-muted); }
     .menu-price { font-size: 1.3rem; font-weight: 800; color: var(--accent-gold); }
 
-    /* Live Video Section */
-    .video-wrapper {
-      background: var(--bg-card); backdrop-filter: blur(16px);
-      padding: 20px; border-radius: 20px; border: 1px solid var(--border-subtle);
-      max-width: 900px; margin: 0 auto;
-    }
-    .video-container {
-      position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0; overflow: hidden; border-radius: 12px;
-    }
-    .video-container video, .video-container iframe {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
-    }
+    /* 15-Sec Ad Video Section */
+    .video-wrapper { background: var(--bg-card); backdrop-filter: blur(16px); padding: 16px; border-radius: 20px; border: 1px solid var(--border-subtle); max-width: 900px; margin: 0 auto; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .ad-badge { position: absolute; top: 30px; right: 30px; background: #e11d48; color: #fff; font-size: 0.75rem; font-weight: 800; padding: 5px 12px; border-radius: 6px; letter-spacing: 1px; z-index: 10; box-shadow: 0 4px 10px rgba(225, 29, 72, 0.4); text-transform: uppercase; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; }
+    .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
 
     /* Policy & Terms Section */
-    .policy-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
-    }
-    .policy-card {
-      background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px);
-      padding: 25px; border-radius: 16px; border: 1px solid var(--border-subtle);
-      border-left: 3px solid var(--accent-gold); display: flex; align-items: flex-start; gap: 15px;
-    }
+    .policy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .policy-card { background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); padding: 25px; border-radius: 16px; border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-gold); display: flex; align-items: flex-start; gap: 15px; }
     .policy-card i { font-size: 1.5rem; color: var(--accent-gold); margin-top: 4px; }
     .policy-content h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
     .policy-content p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
 
     /* Footer */
-    footer {
-      position: relative; z-index: 1; text-align: center; padding: 40px 20px; color: var(--text-muted);
-      font-size: 0.85rem; border-top: 1px solid var(--border-subtle); background: rgba(0,0,0,0.8);
-    }
+    footer { position: relative; z-index: 1; text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-subtle); background: rgba(0,0,0,0.8); }
     footer span { color: #fff; font-weight: 600; }
   </style>
 </head>
@@ -166,9 +118,7 @@
   <!-- Navbar -->
   <nav class="navbar">
     <a href="#" class="logo"><i class="fa-solid fa-scissors"></i> Silver Scissors</a>
-    <a href="https://wa.me/918235251729?text=Hello%20Silver%20Scissors,%20I%20want%20to%20book%20a%20haircut%20appointment." target="_blank" class="nav-btn">
-      Book Slot
-    </a>
+    <a href="https://wa.me/918235251729?text=Hello%20Silver%20Scissors,%20I%20want%20to%20book%20a%20haircut%20appointment." target="_blank" class="nav-btn">Book Slot</a>
   </nav>
 
   <!-- Hero Section -->
@@ -179,107 +129,75 @@
       </div>
       <h1>Premium Men's Grooming.<br><span>Affordable Luxury.</span></h1>
       <p>Clean looks, precision cuts, and top-tier styling right at Hirapur. Skip the waiting line by reserving your chair directly on WhatsApp.</p>
-      
       <a href="https://wa.me/918235251729?text=Hi!%20I%20want%20to%20visit%20Silver%20Scissors%20for%20a%20haircut.%20Is%20there%20a%20slot%20available%20today?" target="_blank" class="btn-book">
         <i class="fa-brands fa-whatsapp"></i> Reserve Your Chair
       </a>
     </div>
   </header>
 
-  <!-- Menu & Pricing Section (NEW) -->
-  <section class="sec-container">
+  <!-- 15-SEC AD PROMO VIDEO SECTION (UPDATED) -->
+  <section class="sec-container" style="background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
     <div class="sec-header" data-aos="fade-up">
-      <h2>Service <span>Menu</span></h2>
-      <p>Premium grooming services at reasonable prices in Hirapur.</p>
-    </div>
-    
-    <div class="menu-box" data-aos="fade-up" data-aos-delay="100">
-      <div class="menu-item">
-        <div class="menu-info">
-          <h3>Classic Haircut</h3>
-          <p>Scissor cut, fade, and professional styling</p>
-        </div>
-        <div class="menu-price">₹150</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-info">
-          <h3>Skin Fade & Trendy Cut</h3>
-          <p>Zero fade, textured crop, and advanced styling</p>
-        </div>
-        <div class="menu-price">₹200</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-info">
-          <h3>Beard Styling & Trim</h3>
-          <p>Sharp outlines, trim, and beard oil conditioning</p>
-        </div>
-        <div class="menu-price">₹100</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-info">
-          <h3>Hair Spa & Dandruff Treatment</h3>
-          <p>Deep scalp cleansing and nourishing spa</p>
-        </div>
-        <div class="menu-price">₹350</div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-info">
-          <h3>Hair Color (Global / Highlights)</h3>
-          <p>Trendy colors, grey coverage, and highlighting</p>
-        </div>
-        <div class="menu-price">₹400+</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Live Video Tour Section (NEW) -->
-  <section class="sec-container" style="background: rgba(0,0,0,0.4); border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-    <div class="sec-header" data-aos="fade-up">
-      <h2>Live Salon <span>Tour</span></h2>
-      <p>Experience the vibe before you visit our chair.</p>
+      <h2>Featured <span>Promo</span></h2>
+      <p>15-Second Cinematic Experience</p>
     </div>
     
     <div class="video-wrapper" data-aos="zoom-in" data-aos-delay="100">
+      <div class="ad-badge">AD PROMO</div>
       <div class="video-container">
-        <!-- Pexels/Mixkit Sample Barber Video for Demo -->
+        <!-- 15 sec high-quality cinematic barber video -->
         <video controls autoplay muted loop playsinline>
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-barber-cutting-hair-with-scissors-42857-large.mp4" type="video/mp4">
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-mens-haircut-and-beard-trim-in-a-barbershop-42861-large.mp4" type="video/mp4">
           Your browser does not support HTML video.
         </video>
       </div>
     </div>
   </section>
 
-  <!-- Policies & Terms Section (NEW) -->
+  <!-- Menu & Pricing Section -->
+  <section class="sec-container">
+    <div class="sec-header" data-aos="fade-up">
+      <h2>Service <span>Menu</span></h2>
+      <p>Premium grooming services at reasonable prices in Hirapur.</p>
+    </div>
+    <div class="menu-box" data-aos="fade-up" data-aos-delay="100">
+      <div class="menu-item">
+        <div class="menu-info"><h3>Classic Haircut</h3><p>Scissor cut, fade, and professional styling</p></div>
+        <div class="menu-price">₹150</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-info"><h3>Skin Fade & Trendy Cut</h3><p>Zero fade, textured crop, and advanced styling</p></div>
+        <div class="menu-price">₹200</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-info"><h3>Beard Styling & Trim</h3><p>Sharp outlines, trim, and beard oil conditioning</p></div>
+        <div class="menu-price">₹100</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-info"><h3>Hair Spa & Dandruff Treatment</h3><p>Deep scalp cleansing and nourishing spa</p></div>
+        <div class="menu-price">₹350</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Policies & Terms Section -->
   <section class="sec-container">
     <div class="sec-header" data-aos="fade-up">
       <h2>Booking <span>Policies</span></h2>
       <p>Please review our terms to ensure a smooth experience.</p>
     </div>
-
     <div class="policy-grid">
       <div class="policy-card" data-aos="fade-up" data-aos-delay="100">
         <i class="fa-solid fa-clock-rotate-left"></i>
-        <div class="policy-content">
-          <h4>15-Minute Grace Period</h4>
-          <p>If you arrive more than 15 minutes late for your booked slot, your appointment may be given to waiting walk-in clients.</p>
-        </div>
+        <div class="policy-content"><h4>15-Minute Grace Period</h4><p>If you arrive more than 15 minutes late for your booked slot, your appointment may be given to waiting walk-in clients.</p></div>
       </div>
-      
       <div class="policy-card" data-aos="fade-up" data-aos-delay="200">
         <i class="fa-solid fa-calendar-xmark"></i>
-        <div class="policy-content">
-          <h4>Cancellation Policy</h4>
-          <p>We request you to cancel or reschedule at least 1 hour before your appointment by replying on WhatsApp.</p>
-        </div>
+        <div class="policy-content"><h4>Cancellation Policy</h4><p>We request you to cancel or reschedule at least 1 hour before your appointment by replying on WhatsApp.</p></div>
       </div>
-
       <div class="policy-card" data-aos="fade-up" data-aos-delay="300">
         <i class="fa-solid fa-mobile-screen-button"></i>
-        <div class="policy-content">
-          <h4>Payments Accepted</h4>
-          <p>We accept Cash and all major UPI payments (Google Pay, PhonePe, Paytm, FamPay). No advance required for booking.</p>
-        </div>
+        <div class="policy-content"><h4>Payments Accepted</h4><p>We accept Cash and all major UPI payments (Google Pay, PhonePe, Paytm, FamPay). No advance required.</p></div>
       </div>
     </div>
   </section>
