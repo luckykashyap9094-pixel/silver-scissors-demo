@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silver Scissors | Premium Men's Salon in Hirapur, Dhanbad</title>
+  
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- GSAP & AOS Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: rgba(23, 23, 23, 0.75);
+      --bg-card-hover: rgba(38, 38, 38, 0.9);
+      --primary: #a8a29e; /* Silver Accent */
+      --accent-gold: #d4af37;
+      --text-main: #fafafa;
+      --text-muted: #a3a3a3;
+      --border-subtle: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed; inset: 0;
+      background: #000;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      z-index: 99999;
+    }
+    .loader-title {
+      font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;
+    }
+    .loader-title span { color: var(--primary); }
+    .loader-bar-wrap {
+      width: 150px; height: 2px; background: rgba(255,255,255,0.1); overflow: hidden;
+    }
+    .loader-bar {
+      width: 0%; height: 100%; background: linear-gradient(90deg, #d4af37, #a8a29e);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(16px);
+      padding: 16px 24px; display: flex; justify-content: space-between; align-items: center;
+      position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border-subtle);
+    }
+    .logo {
+      font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none;
+      display: flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif;
+    }
+    .logo i { color: var(--primary); }
+    .nav-btn {
+      background: var(--text-main); color: var(--bg-dark); padding: 8px 18px; border-radius: 50px;
+      font-weight: 700; text-decoration: none; font-size: 0.85rem; transition: 0.3s;
+    }
+
+    /* Hero Section */
+    .hero-reel {
+      position: relative; width: 100%; height: 75vh;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .reel-video {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1; opacity: 0.6;
+    }
+    .reel-overlay {
+      position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--bg-dark)); z-index: 1;
+    }
+    .reel-content {
+      position: relative; z-index: 2; text-align: center; padding: 0 20px; max-width: 700px;
+    }
+    .rating-badge {
+      display: inline-flex; align-items: center; gap: 6px; background: rgba(212, 175, 55, 0.15);
+      color: var(--accent-gold); padding: 6px 16px; border-radius: 30px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; border: 1px solid rgba(212,175,55,0.3);
+    }
+    .hero-reel h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 16px; font-family: 'Space Grotesk', sans-serif; }
+    .hero-reel p { font-size: 1.1rem; color: #e5e5e5; margin-bottom: 30px; }
+    
+    .btn-book {
+      background: #25d366; color: #000; padding: 15px 32px; border-radius: 50px;
+      font-size: 1.1rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+      transition: 0.3s; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    }
+    .btn-book:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+
+    /* Info Section */
+    .info-bar {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 30px 20px;
+      background: #111; border-bottom: 1px solid var(--border-subtle);
+    }
+    .info-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.9rem; }
+    .info-item i { color: var(--primary); font-size: 1.2rem; }
+
+    /* Services Section */
+    .services-sec { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+    .sec-header { text-align: center; margin-bottom: 50px; }
+    .sec-header h2 { font-size: 2.5rem; font-weight: 800; font-family: 'Space Grotesk', sans-serif; }
+    .sec-header span { color: var(--primary); }
+
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .service-card {
+      background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px;
+      padding: 30px; text-align: center; transition: 0.3s; backdrop-filter: blur(10px);
+    }
+    .service-card:hover { transform: translateY(-5px); border-color: var(--primary); background: var(--bg-card-hover); }
+    .service-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+    .service-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
+    .service-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* Reviews Section (Extracted from Google) */
+    .reviews-sec { padding: 60px 20px; background: #111; }
+    .review-wrap { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+    .review-box { background: #1a1a1a; padding: 25px; border-radius: 16px; border-left: 4px solid var(--accent-gold); }
+    .stars { color: var(--accent-gold); margin-bottom: 10px; font-size: 0.9rem; }
+    .review-text { font-size: 1rem; font-style: italic; color: #e5e5e5; margin-bottom: 15px; }
+    .reviewer { font-weight: 700; font-size: 0.85rem; color: var(--primary); }
+
+    footer { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-subtle); }
+    footer span { color: #fff; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-title">Silver <span>Scissors</span></div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo"><i class="fa-solid fa-scissors"></i> Silver Scissors</a>
+    <!-- Phone number directly pre-filled from Maps Data -->
+    <a href="https://wa.me/918235251729?text=Hello%20Silver%20Scissors,%20I%20want%20to%20book%20a%20haircut%20appointment." target="_blank" class="nav-btn">
+      Book Slot
+    </a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-reel">
+    <!-- Premium Barber Video Background -->
+    <video class="reel-video" loop playsinline muted autoplay>
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-barber-cutting-hair-with-scissors-42857-large.mp4" type="video/mp4">
+    </video>
+    <div class="reel-overlay"></div>
+    
+    <div class="reel-content" data-aos="fade-up">
+      <div class="rating-badge">
+        <i class="fa-solid fa-star"></i> 4.4 / 5 (143+ Reviews in Dhanbad)
+      </div>
+      <h1>Premium Grooming.<br><span>Reasonable Prices.</span></h1>
+      <p>Clean looks, experienced staff, and the best haircuts in town. Reserve your slot directly on WhatsApp and skip the waiting line.</p>
+      
+      <a href="https://wa.me/918235251729?text=Hi!%20I%20want%20to%20visit%20Silver%20Scissors%20for%20a%20haircut.%20Is%20there%20a%20slot%20available%20today?" target="_blank" class="btn-book">
+        <i class="fa-brands fa-whatsapp"></i> Reserve Your Chair
+      </a>
+    </div>
+  </header>
+
+  <!-- Info Bar -->
+  <div class="info-bar">
+    <div class="info-item"><i class="fa-solid fa-location-dot"></i> Harimandir, Megha Tower, Hirapur</div>
+    <div class="info-item"><i class="fa-solid fa-clock"></i> Open Daily: 8:00 AM Onwards</div>
+    <div class="info-item"><i class="fa-solid fa-phone"></i> 082352 51729</div>
+  </div>
+
+  <!-- Services -->
+  <section class="services-sec">
+    <div class="sec-header" data-aos="fade-up">
+      <h2>Our <span>Services</span></h2>
+      <p style="color: var(--text-muted); margin-top: 10px;">Expert styling by professional hairdressers.</p>
+    </div>
+    
+    <div class="service-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+        <h3>Signature Haircut</h3>
+        <p>Sharp, modern, and classic cuts tailored perfectly to your face shape.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>Beard Styling</h3>
+        <p>Precision trimming and shaping for a clean, professional, or rugged look.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+        <h3>Hair Spa & Color</h3>
+        <p>Revitalize your hair with premium treatments and trendy color highlights.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="reviews-sec">
+    <div class="sec-header" data-aos="fade-up">
+      <h2>What Hirapur <span>Says</span></h2>
+    </div>
+    <div class="review-wrap">
+      <div class="review-box" data-aos="fade-right">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="review-text">"Best Haircuts in Town at Cheaper rates. Nice place for a clean and fancy look."</p>
+        <p class="reviewer">— Subhash Kumar Singh (Local Guide)</p>
+      </div>
+      <div class="review-box" data-aos="fade-left">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="review-text">"Saloon acha hai price v sahi hai, aur hair cutting v acha krte hai... This is one of the best Saloons in Dhanbad situated at Hirapur."</p>
+        <p class="reviewer">— Sadab Khan & Amit</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Silver Scissors Hirapur, Dhanbad.</p>
+    <p style="margin-top: 8px; font-size: 0.75rem; color: #555;">Website Powered by <span>Apex Studios Dhanbad</span> | Flat ₹1999 Setup</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Preloader Logic
+    window.addEventListener('load', () => {
+      gsap.to(".loader-bar", { width: "100%", duration: 1.2, ease: "power2.inOut" });
+      setTimeout(() => {
+        gsap.to("#preloader", { opacity: 0, duration: 0.6, onComplete: () => {
+          document.getElementById('preloader').style.display = 'none';
+          AOS.init({ duration: 800, once: true });
+        }});
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
